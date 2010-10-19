@@ -1,0 +1,34 @@
+2.3
+===
+
+- Create working directories if they do not exist.
+- Add support for trimming all block from Intel SSDs.
+- Add support for TRIM check of physical disk.
+- Added check for benchmarking device 0. This prevents 
+  overwriting the system disk.
+- Fixed a bug where file pointer wrote outside LBA.
+
+2.2
+===
+
+- Fix build with mingw 4.3.3.
+- Use sector-aligned offsets for SetFilePointer() in RndFormat.
+- Avoid an integer overflow in the offset calculation in RndFormat.
+- Switch to SetFilePointerEx() instead of SetFilePointer() when seeking on
+  devices.
+- Fix some warnings when building.
+- Correctly check buffering type in MicroBench.
+- Returns BOOL instead of boolean when Windows returns BOOL in its API.
+- Fix some possibly broken comparisons involving floats (use modulo instead).
+- Fix several resources and memory leaks.
+- Do not use sprintf with overlapping buffers (behavior undefined in the
+  standard).
+- Do not use FILE_FLAG_SEQUENTIAL_SCAN when opening devices, as the bench makes
+  also random IOs.
+- Fix a stack buffer overflow in GenBench when parsing the experiment plan.
+- Correctly alloc/free sector-aligned data buffers.
+
+Pre-2.2
+=======
+
+- Unknown.
